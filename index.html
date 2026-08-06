@@ -3,81 +3,135 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>تحميل H&R.YAD</title>
+  <title>تحميل H&R.YAD — الإصدار 1.0.0</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap');
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:"Segoe UI",Tahoma,Arial,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
-    .card{background:#fff;border-radius:20px;box-shadow:0 25px 50px rgba(0,0,0,.25);max-width:700px;width:100%;padding:40px;text-align:center}
-    .logo{width:100px;height:100px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:36px;font-weight:700}
-    h1{color:#333;margin-bottom:10px;font-size:32px}
-    .subtitle{color:#666;margin-bottom:30px;font-size:16px}
-    .btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:16px 40px;border-radius:50px;text-decoration:none;font-size:18px;font-weight:700;transition:transform .2s,box-shadow .2s;border:none;cursor:pointer}
-    .btn:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(102,126,234,.4)}
-    .btn svg{width:24px;height:24px;fill:currentColor}
-    .info{background:#f8f9fa;border-radius:15px;padding:25px;margin-top:30px;text-align:right}
-    .info h3{color:#333;margin-bottom:15px;font-size:18px}
-    .info ul{list-style:none;padding:0}
-    .info ul li{padding:8px 0;border-bottom:1px solid #e9ecef;color:#555;font-size:14px}
-    .info ul li:last-child{border-bottom:none}
-    .info ul li::before{content:"✓";color:#28a745;font-weight:700;margin-left:10px}
-    .version-badge{display:inline-block;background:#e9ecef;color:#495057;padding:6px 16px;border-radius:20px;font-size:14px;margin-top:15px}
-    .footer{margin-top:25px;color:#999;font-size:13px}
-    .steps{background:#fff3cd;border:1px solid #ffeaa7;border-radius:10px;padding:15px;margin-top:20px;text-align:right}
-    .steps h4{color:#856404;margin-bottom:10px}
-    .steps ol{padding-right:20px;color:#856404;font-size:14px}
-    .steps ol li{margin-bottom:5px}
+    body{font-family:'Tajawal',sans-serif;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+    .container{max-width:750px;width:100%}
+    .card{background:rgba(255,255,255,.95);border-radius:24px;box-shadow:0 30px 60px rgba(0,0,0,.4);padding:50px 40px;text-align:center;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2)}
+    .badge{display:inline-block;background:linear-gradient(135deg,#e94560,#ff6b6b);color:#fff;padding:8px 24px;border-radius:50px;font-size:13px;font-weight:700;letter-spacing:1px;margin-bottom:25px}
+    .logo{width:110px;height:110px;background:linear-gradient(135deg,#e94560,#533483);border-radius:24px;margin:0 auto 25px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:42px;font-weight:900;box-shadow:0 15px 35px rgba(233,69,96,.4);transform:rotate(-5deg)}
+    h1{color:#1a1a2e;margin-bottom:8px;font-size:38px;font-weight:900}
+    .subtitle{color:#666;margin-bottom:35px;font-size:17px;font-weight:500}
+    .btn{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#e94560,#533483);color:#fff;padding:18px 50px;border-radius:50px;text-decoration:none;font-size:20px;font-weight:800;transition:all .3s;border:none;cursor:pointer;box-shadow:0 10px 30px rgba(233,69,96,.35)}
+    .btn:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 20px 40px rgba(233,69,96,.5)}
+    .btn svg{width:26px;height:26px;fill:currentColor;animation:bounce 2s infinite}
+    @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+    .file-info{background:#f8f9fa;border-radius:16px;padding:20px;margin-top:25px;display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap}
+    .file-info span{background:#fff;padding:10px 20px;border-radius:12px;font-size:14px;color:#555;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+    .file-info .label{color:#888;font-size:12px;display:block;margin-bottom:3px}
+    .file-info .value{color:#1a1a2e;font-weight:800}
+    .steps{background:linear-gradient(135deg,#fff9e6,#fff3cd);border:2px solid #ffd700;border-radius:20px;padding:30px;margin-top:30px;text-align:right}
+    .steps h3{color:#856404;margin-bottom:20px;font-size:20px;display:flex;align-items:center;gap:10px}
+    .steps h3::before{content:"📥";font-size:24px}
+    .steps ol{padding-right:25px;color:#5c4b00;font-size:15px;line-height:2.2}
+    .steps ol li{margin-bottom:8px}
+    .steps ol li strong{color:#1a1a2e}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:30px}
+    .feature{background:#f0f4f8;border-radius:16px;padding:20px;text-align:center;transition:transform .2s}
+    .feature:hover{transform:translateY(-5px)}
+    .feature-icon{font-size:32px;margin-bottom:10px}
+    .feature-title{color:#1a1a2e;font-weight:800;font-size:15px;margin-bottom:5px}
+    .feature-desc{color:#666;font-size:13px}
+    .sys-req{background:linear-gradient(135deg,#e7f3ff,#d4edda);border-radius:20px;padding:25px;margin-top:25px;text-align:right}
+    .sys-req h3{color:#155724;margin-bottom:15px;font-size:18px}
+    .sys-req ul{list-style:none;padding:0}
+    .sys-req ul li{padding:8px 0;color:#155724;font-size:14px;display:flex;align-items:center;gap:10px}
+    .sys-req ul li::before{content:"✓";background:#28a745;color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+    .warning{background:#fff3cd;border:1px solid #ffeaa7;border-radius:16px;padding:20px;margin-top:25px;text-align:right}
+    .warning h4{color:#856404;margin-bottom:10px;font-size:16px}
+    .warning p{color:#856404;font-size:14px;line-height:1.8}
+    .footer{margin-top:35px;padding-top:25px;border-top:1px solid #e9ecef;color:#999;font-size:14px}
+    .footer strong{color:#533483}
+    .version-tag{display:inline-block;background:#e94560;color:#fff;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;margin-right:10px}
+    @media(max-width:600px){.card{padding:30px 20px}h1{font-size:28px}.btn{padding:16px 30px;font-size:17px}.features{grid-template-columns:1fr}}
   </style>
 <base target="_blank">
 </head>
 <body>
-  <div class="card">
-    <div class="logo">H&R</div>
-    <h1>H&R.YAD</h1>
-    <p class="subtitle">برنامج المحاسبة والإدارة المالية</p>
+  <div class="container">
+    <div class="card">
+      <div class="badge">الإصدار 1.0.0 متاح الآن</div>
+      <div class="logo">H&R</div>
+      <h1>H&R.YAD</h1>
+      <p class="subtitle">برنامج المحاسبة والإدارة المالية الشامل</p>
 
-    <span class="version-badge">الإصدار 1.0.0</span>
-
-    <div style="margin-top:25px">
-      <a class="btn" href="https://github.com/haithamalaa98/hr-yad-download/releases/download/v1.0.0/HRYAD-Setup-v1.0.0.exe" download>
+      <a class="btn" href="https://github.com/haithamalaa98/hr-yad-download/releases/download/v1.0.0/H.R.YAD-1.0.0-win.zip" download>
         <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
         تحميل البرنامج
       </a>
-    </div>
 
-    <div class="steps">
-      <h4>📥 خطوات التثبيت:</h4>
-      <ol>
-        <li>اضغط الزر أعلاه لتحميل ملف التثبيت</li>
-        <li>شغّل ملف <strong>HRYAD-Setup-v1.0.0.exe</strong></li>
-        <li>اتبع خطوات معالج التثبيت</li>
-        <li>اضغط "إنهاء" واستمتع بالبرنامج!</li>
-      </ol>
-    </div>
+      <div class="file-info">
+        <span>
+          <span class="label">اسم الملف</span>
+          <span class="value">H.R.YAD-1.0.0-win.zip</span>
+        </span>
+        <span>
+          <span class="label">الإصدار</span>
+          <span class="value">1.0.0</span>
+        </span>
+        <span>
+          <span class="label">النظام</span>
+          <span class="value">Windows</span>
+        </span>
+      </div>
 
-    <div class="info">
-      <h3>✨ مميزات البرنامج</h3>
-      <ul>
-        <li>واجهة عربية سهلة الاستخدام</li>
-        <li>إدارة الفواتير والمخزون</li>
-        <li>تقارير مالية تفصيلية</li>
-        <li>نسخ احتياطي تلقائي للبيانات</li>
-        <li>لا يحتاج إنترنت للعمل</li>
-        <li>تثبيت سهل بخطوة واحدة</li>
-      </ul>
-    </div>
+      <div class="steps">
+        <h3>خطوات التثبيت السريعة</h3>
+        <ol>
+          <li>اضغط الزر الأحمر <strong>"تحميل البرنامج"</strong> أعلاه</li>
+          <li>بعد اكتمال التحميل، <strong>فك الضغط</strong> عن ملف ZIP في مجلد جديد</li>
+          <li>افتح المجلد وشغّل ملف <strong>H&R.YAD.exe</strong></li>
+          <li>عند التشغيل الأول، أنشئ حساب <strong>المدير</strong> (Admin)</li>
+          <li>✅ جاهز! ابدأ بإدارة محاسبتك بسهولة</li>
+        </ol>
+      </div>
 
-    <div class="info" style="margin-top:15px;background:#e7f3ff;border-color:#b3d9ff">
-      <h3 style="color:#004085">💻 متطلبات النظام</h3>
-      <ul style="color:#004085">
-        <li>Windows 7 / 8 / 10 / 11</li>
-        <li>ذاكرة عشوائية: 2 GB كحد أدنى</li>
-        <li>مساحة فارغة: 100 MB</li>
-      </ul>
-    </div>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">📊</div>
+          <div class="feature-title">إدارة الفواتير</div>
+          <div class="feature-desc">إنشاء وتتبع الفواتير بكل سهولة</div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📦</div>
+          <div class="feature-title">المخزون والمستودع</div>
+          <div class="feature-desc">تتبع المنتجات والكميات لحظياً</div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📈</div>
+          <div class="feature-title">تقارير مالية</div>
+          <div class="feature-desc">تقارير تفصيلية ورسوم بيانية</div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">💾</div>
+          <div class="feature-title">نسخ احتياطي</div>
+          <div class="feature-desc">حفظ البيانات وحمايتها دائماً</div>
+        </div>
+      </div>
 
-    <p class="footer">
-      تم التطوير بواسطة: <strong>Haitham</strong> | H&R.YAD © 2026
-    </p>
+      <div class="sys-req">
+        <h3>💻 متطلبات النظام</h3>
+        <ul>
+          <li>نظام التشغيل: Windows 7 / 8 / 10 / 11</li>
+          <li>الذاكرة العشوائية: 2 GB كحد أدنى</li>
+          <li>المساحة الفارغة: 100 MB على الأقل</li>
+          <li>لا يحتاج تثبيت Node.js — البرنامج يعمل بشكل مستقل</li>
+        </ul>
+      </div>
+
+      <div class="warning">
+        <h4>⚠️ ملاحظة أمان مهمة</h4>
+        <p>عند تشغيل البرنامج لأول مرة، قد يظهر تحذير من <strong>Windows SmartScreen</strong> أو جدار الحماية. هذا أمر طبيعي للبرامج الجديدة. اختر <strong>"مزيد من المعلومات"</strong> ثم <strong>"تشغيل على أي حال"</strong> (Run anyway) إذا كنت تثق بالمصدر.</p>
+      </div>
+
+      <div class="footer">
+        <p>تم التطوير بواسطة <strong>Haitham</strong></p>
+        <p style="margin-top:8px">H&R.YAD <span class="version-tag">v1.0.0</span> © 2026</p>
+        <p style="margin-top:15px;font-size:12px;color:#bbb">للدعم والاستفسارات: github.com/haithamalaa98/hr-yad-download</p>
+      </div>
+    </div>
   </div>
 </body>
 </html>
