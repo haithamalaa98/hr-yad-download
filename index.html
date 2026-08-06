@@ -3,50 +3,81 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>تحميل H&R.YAD — H&R.YAD</title>
+  <title>تحميل H&R.YAD</title>
   <style>
-    body{font-family:Arial,Helvetica,sans-serif;line-height:1.6;padding:24px;background:#f7f7f8;color:#222}
-    .card{max-width:800px;margin:24px auto;padding:20px;background:#fff;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
-    h1{margin-top:0}
-    .btn{display:inline-block;padding:12px 18px;background:#0078d4;color:#fff;text-decoration:none;border-radius:6px;font-weight:600}
-    .note{margin-top:16px;color:#555}
-    ul{margin-top:8px}
-    code{background:#eee;padding:2px 6px;border-radius:4px}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:"Segoe UI",Tahoma,Arial,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+    .card{background:#fff;border-radius:20px;box-shadow:0 25px 50px rgba(0,0,0,.25);max-width:700px;width:100%;padding:40px;text-align:center}
+    .logo{width:100px;height:100px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:36px;font-weight:700}
+    h1{color:#333;margin-bottom:10px;font-size:32px}
+    .subtitle{color:#666;margin-bottom:30px;font-size:16px}
+    .btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:16px 40px;border-radius:50px;text-decoration:none;font-size:18px;font-weight:700;transition:transform .2s,box-shadow .2s;border:none;cursor:pointer}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(102,126,234,.4)}
+    .btn svg{width:24px;height:24px;fill:currentColor}
+    .info{background:#f8f9fa;border-radius:15px;padding:25px;margin-top:30px;text-align:right}
+    .info h3{color:#333;margin-bottom:15px;font-size:18px}
+    .info ul{list-style:none;padding:0}
+    .info ul li{padding:8px 0;border-bottom:1px solid #e9ecef;color:#555;font-size:14px}
+    .info ul li:last-child{border-bottom:none}
+    .info ul li::before{content:"✓";color:#28a745;font-weight:700;margin-left:10px}
+    .version-badge{display:inline-block;background:#e9ecef;color:#495057;padding:6px 16px;border-radius:20px;font-size:14px;margin-top:15px}
+    .footer{margin-top:25px;color:#999;font-size:13px}
+    .steps{background:#fff3cd;border:1px solid #ffeaa7;border-radius:10px;padding:15px;margin-top:20px;text-align:right}
+    .steps h4{color:#856404;margin-bottom:10px}
+    .steps ol{padding-right:20px;color:#856404;font-size:14px}
+    .steps ol li{margin-bottom:5px}
   </style>
+<base target="_blank">
 </head>
 <body>
   <div class="card">
-    <h1>تحميل H&R.YAD</h1>
-    <p>اضغط الزر أدناه لتحميل ملف التثبيت (نسخة Windows ZIP). بعد التحميل، فك الضغط ثم شغل <code>H&R.YAD.exe</code>.</p>
-    <p><a class="btn" href="H&R.YAD-1.0.0-win.zip" download>تحميل H&R.YAD — ZIP</a></p>
+    <div class="logo">H&R</div>
+    <h1>H&R.YAD</h1>
+    <p class="subtitle">برنامج المحاسبة والإدارة المالية</p>
 
-    <div class="note">
-      <strong>ملاحظات مهمة:</strong>
+    <span class="version-badge">الإصدار 1.0.0</span>
+
+    <div style="margin-top:25px">
+      <a class="btn" href="https://github.com/haithamalaa98/hr-yad-download/releases/download/v1.0.0/HRYAD-Setup-v1.0.0.exe" download>
+        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        تحميل البرنامج
+      </a>
+    </div>
+
+    <div class="steps">
+      <h4>📥 خطوات التثبيت:</h4>
+      <ol>
+        <li>اضغط الزر أعلاه لتحميل ملف التثبيت</li>
+        <li>شغّل ملف <strong>HRYAD-Setup-v1.0.0.exe</strong></li>
+        <li>اتبع خطوات معالج التثبيت</li>
+        <li>اضغط "إنهاء" واستمتع بالبرنامج!</li>
+      </ol>
+    </div>
+
+    <div class="info">
+      <h3>✨ مميزات البرنامج</h3>
       <ul>
-        <li>إذا لم يعمل الزر مباشرة، تأكد أن ملف ZIP (الملف <code>H&R.YAD-1.0.0-win.zip</code>) موجود في نفس المجلد مع هذه الصفحة.</li>
-        <li>عند فتح <code>H&R.YAD.exe</code> للمرة الأولى قد يظهر تحذير من SmartScreen أو جدار الحماية. اختر "تشغيل" أو "سماح" إذا أثقّت بالمصدر.</li>
-        <li>لا حاجة لتثبيت Node.js على جهاز المستلم — النسخة محزمة مع كل شيء.</li>
-        <li>للمراسلة أو المساعدة التقنية، اعطِ المستلم التعليمات التالية:
-          <ol>
-            <li>فك الضغط على الملف ZIP في مجلد.</li>
-            <li>شغّل <code>H&R.YAD.exe</code> (قد تظهر رسالة أمان — اضغط "تشغيل" أو "Allow").</li>
-            <li>أثناء التشغيل الأول سيُطلب إنشاء حساب مدير إن لم يكن موجودًا.</li>
-          </ol>
-        </li>
+        <li>واجهة عربية سهلة الاستخدام</li>
+        <li>إدارة الفواتير والمخزون</li>
+        <li>تقارير مالية تفصيلية</li>
+        <li>نسخ احتياطي تلقائي للبيانات</li>
+        <li>لا يحتاج إنترنت للعمل</li>
+        <li>تثبيت سهل بخطوة واحدة</li>
       </ul>
     </div>
 
-    <h3>نشر على GitHub Pages أو استضافة ثابتة</h3>
-    <p>لنشر هذه الصفحة كموقع تنزيل ثابت، ارفع محتويات هذا المجلد إلى أي استضافة ملفات ثابتة (GitHub Pages، Netlify، Vercel، أو أي استضافة ستيك). يجب أن تتضمن الملفات:</p>
-    <ul>
-      <li><code>index.html</code> (هذه الصفحة)</li>
-      <li><code>H&R.YAD-1.0.0-win.zip</code> (ملف التوزيع)</li>
-    </ul>
+    <div class="info" style="margin-top:15px;background:#e7f3ff;border-color:#b3d9ff">
+      <h3 style="color:#004085">💻 متطلبات النظام</h3>
+      <ul style="color:#004085">
+        <li>Windows 7 / 8 / 10 / 11</li>
+        <li>ذاكرة عشوائية: 2 GB كحد أدنى</li>
+        <li>مساحة فارغة: 100 MB</li>
+      </ul>
+    </div>
 
-    <h3>نصيحة سريعة: رفع إلى GitHub Release</h3>
-    <p>يمكنك أيضاً إنشاء مستودع GitHub ثم فتح صفحة <strong>Releases</strong> ورفع ZIP كـ Release asset. بذلك ستحصل على رابط مباشر للملف يمكن مشاركته بسهولة.</p>
-
-    <p style="margin-top:18px;color:#777">تم إنشاؤها تلقائياً — يمكنك تعديل النص أو الشعار قبل النشر.</p>
+    <p class="footer">
+      تم التطوير بواسطة: <strong>Haitham</strong> | H&R.YAD © 2026
+    </p>
   </div>
 </body>
 </html>
