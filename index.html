@@ -4,60 +4,329 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>تحميل H&R.YAD — الإصدار 1.0.0</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap');
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Tajawal',sans-serif;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
-    .container{max-width:750px;width:100%}
-    .card{background:rgba(255,255,255,.95);border-radius:24px;box-shadow:0 30px 60px rgba(0,0,0,.4);padding:50px 40px;text-align:center;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2)}
-    .badge{display:inline-block;background:linear-gradient(135deg,#e94560,#ff6b6b);color:#fff;padding:8px 24px;border-radius:50px;font-size:13px;font-weight:700;letter-spacing:1px;margin-bottom:25px}
-    .logo{width:110px;height:110px;background:linear-gradient(135deg,#e94560,#533483);border-radius:24px;margin:0 auto 25px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:42px;font-weight:900;box-shadow:0 15px 35px rgba(233,69,96,.4);transform:rotate(-5deg)}
-    h1{color:#1a1a2e;margin-bottom:8px;font-size:38px;font-weight:900}
-    .subtitle{color:#666;margin-bottom:35px;font-size:17px;font-weight:500}
-    .btn{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#e94560,#533483);color:#fff;padding:18px 50px;border-radius:50px;text-decoration:none;font-size:20px;font-weight:800;transition:all .3s;border:none;cursor:pointer;box-shadow:0 10px 30px rgba(233,69,96,.35)}
-    .btn:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 20px 40px rgba(233,69,96,.5)}
-    .btn svg{width:26px;height:26px;fill:currentColor;animation:bounce 2s infinite}
-    @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-    .file-info{background:#f8f9fa;border-radius:16px;padding:20px;margin-top:25px;display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap}
-    .file-info span{background:#fff;padding:10px 20px;border-radius:12px;font-size:14px;color:#555;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.05)}
-    .file-info .label{color:#888;font-size:12px;display:block;margin-bottom:3px}
-    .file-info .value{color:#1a1a2e;font-weight:800}
-    .steps{background:linear-gradient(135deg,#fff9e6,#fff3cd);border:2px solid #ffd700;border-radius:20px;padding:30px;margin-top:30px;text-align:right}
-    .steps h3{color:#856404;margin-bottom:20px;font-size:20px;display:flex;align-items:center;gap:10px}
-    .steps h3::before{content:"📥";font-size:24px}
-    .steps ol{padding-right:25px;color:#5c4b00;font-size:15px;line-height:2.2}
-    .steps ol li{margin-bottom:8px}
-    .steps ol li strong{color:#1a1a2e}
-    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:30px}
-    .feature{background:#f0f4f8;border-radius:16px;padding:20px;text-align:center;transition:transform .2s}
-    .feature:hover{transform:translateY(-5px)}
-    .feature-icon{font-size:32px;margin-bottom:10px}
-    .feature-title{color:#1a1a2e;font-weight:800;font-size:15px;margin-bottom:5px}
-    .feature-desc{color:#666;font-size:13px}
-    .sys-req{background:linear-gradient(135deg,#e7f3ff,#d4edda);border-radius:20px;padding:25px;margin-top:25px;text-align:right}
-    .sys-req h3{color:#155724;margin-bottom:15px;font-size:18px}
-    .sys-req ul{list-style:none;padding:0}
-    .sys-req ul li{padding:8px 0;color:#155724;font-size:14px;display:flex;align-items:center;gap:10px}
-    .sys-req ul li::before{content:"✓";background:#28a745;color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
-    .warning{background:#fff3cd;border:1px solid #ffeaa7;border-radius:16px;padding:20px;margin-top:25px;text-align:right}
-    .warning h4{color:#856404;margin-bottom:10px;font-size:16px}
-    .warning p{color:#856404;font-size:14px;line-height:1.8}
-    .footer{margin-top:35px;padding-top:25px;border-top:1px solid #e9ecef;color:#999;font-size:14px}
-    .footer strong{color:#533483}
-    .version-tag{display:inline-block;background:#e94560;color:#fff;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;margin-right:10px}
-    @media(max-width:600px){.card{padding:30px 20px}h1{font-size:28px}.btn{padding:16px 30px;font-size:17px}.features{grid-template-columns:1fr}}
+    :root {
+      --midnight-indigo: #2C2F5A;
+      --silver: #C0C0C0;
+      --soft-coral: #F4A6B9;
+      --lavender: #B39BC8;
+      --sky-blue: #8EBFD8;
+      --white: #ffffff;
+      --light-bg: #F7F5FA;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, var(--midnight-indigo) 0%, #3a3d6e 50%, var(--lavender) 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container { max-width: 780px; width: 100%; }
+
+    .card {
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 28px;
+      box-shadow: 0 30px 60px rgba(44, 47, 90, 0.35);
+      padding: 50px 40px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--soft-coral), var(--lavender));
+      color: var(--midnight-indigo);
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 25px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .logo-img {
+      width: 140px;
+      height: auto;
+      margin: 0 auto 20px;
+      display: block;
+      filter: drop-shadow(0 10px 20px rgba(44, 47, 90, 0.25));
+    }
+
+    h1 {
+      color: var(--midnight-indigo);
+      margin-bottom: 8px;
+      font-size: 40px;
+      font-weight: 900;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .subtitle {
+      color: #6b6b8a;
+      margin-bottom: 35px;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, var(--soft-coral), var(--lavender));
+      color: var(--midnight-indigo);
+      padding: 18px 50px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 800;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(179, 155, 200, 0.4);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(179, 155, 200, 0.55);
+    }
+
+    .btn svg {
+      width: 26px;
+      height: 26px;
+      fill: currentColor;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .file-info {
+      background: var(--light-bg);
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .file-info span {
+      background: var(--white);
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      color: #555;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(44, 47, 90, 0.06);
+    }
+
+    .file-info .label {
+      color: #888;
+      font-size: 12px;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .file-info .value {
+      color: var(--midnight-indigo);
+      font-weight: 800;
+    }
+
+    .steps {
+      background: linear-gradient(135deg, #fff0f3, #f3e8ff);
+      border: 2px solid var(--soft-coral);
+      border-radius: 20px;
+      padding: 30px;
+      margin-top: 30px;
+      text-align: right;
+    }
+
+    .steps h3 {
+      color: var(--midnight-indigo);
+      margin-bottom: 20px;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .steps h3::before {
+      content: "📥";
+      font-size: 24px;
+    }
+
+    .steps ol {
+      padding-right: 25px;
+      color: #4a4a6a;
+      font-size: 15px;
+      line-height: 2.2;
+    }
+
+    .steps ol li { margin-bottom: 8px; }
+    .steps ol li strong { color: var(--midnight-indigo); }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .feature {
+      background: linear-gradient(135deg, #f0f4f8, #f7f0fa);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid rgba(179, 155, 200, 0.2);
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(44, 47, 90, 0.1);
+    }
+
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .feature-title {
+      color: var(--midnight-indigo);
+      font-weight: 800;
+      font-size: 15px;
+      margin-bottom: 5px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .feature-desc {
+      color: #666;
+      font-size: 13px;
+    }
+
+    .sys-req {
+      background: linear-gradient(135deg, #e8f4fc, #f0e8f7);
+      border-radius: 20px;
+      padding: 25px;
+      margin-top: 25px;
+      text-align: right;
+      border: 1px solid rgba(142, 191, 216, 0.3);
+    }
+
+    .sys-req h3 {
+      color: var(--midnight-indigo);
+      margin-bottom: 15px;
+      font-size: 18px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .sys-req ul { list-style: none; padding: 0; }
+
+    .sys-req ul li {
+      padding: 8px 0;
+      color: #3a3a5a;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sys-req ul li::before {
+      content: "✓";
+      background: var(--lavender);
+      color: var(--white);
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .warning {
+      background: linear-gradient(135deg, #fff8e6, #fff0f3);
+      border: 1px solid var(--soft-coral);
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 25px;
+      text-align: right;
+    }
+
+    .warning h4 {
+      color: var(--midnight-indigo);
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .warning p {
+      color: #5a4a5a;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .footer {
+      margin-top: 35px;
+      padding-top: 25px;
+      border-top: 1px solid #e9ecef;
+      color: #999;
+      font-size: 14px;
+    }
+
+    .footer strong { color: var(--midnight-indigo); }
+
+    .version-tag {
+      display: inline-block;
+      background: var(--soft-coral);
+      color: var(--midnight-indigo);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    @media(max-width: 600px) {
+      .card { padding: 30px 20px; }
+      h1 { font-size: 28px; }
+      .btn { padding: 16px 30px; font-size: 17px; }
+      .features { grid-template-columns: 1fr; }
+      .logo-img { width: 110px; }
+    }
   </style>
+  <base target="_blank">
 <base target="_blank">
 </head>
 <body>
   <div class="container">
     <div class="card">
       <div class="badge">الإصدار 1.0.0 متاح الآن</div>
-      <div class="logo">H&R</div>
+
+      <img src="logo.png" alt="H&R.YAD Logo" class="logo-img" />
+
       <h1>H&R.YAD</h1>
       <p class="subtitle">برنامج المحاسبة والإدارة المالية الشامل</p>
 
-      <a class="btn" href="https://github.com/haithamalaa98/hr-yad-download/releases/download/v1.0.0/H.R.YAD-1.0.0-win.zip" download>
+      <a class="btn" href="https://github.com/haithamalaa98/hr-yad-download/releases/download/v1.0.0/H.R.YAD-.zip" download>
         <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
         تحميل البرنامج
       </a>
@@ -65,7 +334,7 @@
       <div class="file-info">
         <span>
           <span class="label">اسم الملف</span>
-          <span class="value">H.R.YAD-1.0.0-win.zip</span>
+          <span class="value">H.R.YAD-.zip</span>
         </span>
         <span>
           <span class="label">الإصدار</span>
@@ -80,7 +349,7 @@
       <div class="steps">
         <h3>خطوات التثبيت السريعة</h3>
         <ol>
-          <li>اضغط الزر الأحمر <strong>"تحميل البرنامج"</strong> أعلاه</li>
+          <li>اضغط الزر <strong>"تحميل البرنامج"</strong> أعلاه</li>
           <li>بعد اكتمال التحميل، <strong>فك الضغط</strong> عن ملف ZIP في مجلد جديد</li>
           <li>افتح المجلد وشغّل ملف <strong>H&R.YAD.exe</strong></li>
           <li>عند التشغيل الأول، أنشئ حساب <strong>المدير</strong> (Admin)</li>
